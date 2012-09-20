@@ -30,3 +30,7 @@ Template = (function() {
 $(function() {
 	Template.init();
 });
+
+// ON PAGE LOAD
+$(window).load(function() {
+});
