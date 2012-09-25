@@ -20,8 +20,6 @@ Template = (function() {
 	// PUBLIC METHODS
 	return {
 		init: function() {
-			// set js enabled class
-			$('html').removeClass('no-js').addClass('has-js');
 		}
 	};
 }());
