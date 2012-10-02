@@ -4,22 +4,32 @@
 <!--[if IE 8]>    <html lang="en-gb" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en-gb" class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 
 	<title>HTML/CSS/JS Template</title>
 	<script>
-		// set js enabled class
+		// set js enabled class - replaces 'no-js' with 'js'
 		document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1' + 'js' + '$2');
 	</script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- browser settings -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
 
-	<link href="css/reset.css" media="screen" rel="stylesheet">
+	<!-- site icons -->
+	<!--<link rel="shortcut icon" href="images/icons/favicon.ico" />
+	<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-touch-icon-retina.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-touch-icon-ipad-retina.png" />-->
+
+	<!-- stylesheets -->
+	<link href="css/reset.css" media="screen" rel="stylesheet" />
 	<link href="css/style.css" media="screen" rel="stylesheet" />
 	<link href="css/style_small.css" media="screen and (min-width: 479px)" rel="stylesheet" />
 	<link href="css/style_medium.css" media="screen and (min-width: 767px)" rel="stylesheet" />
 	<link href="css/style_large.css" media="screen and (min-width: 959px)" rel="stylesheet" />
-
+	<!-- add all stylesheets and html5shim to <IE9 -->
 	<!--[if lt IE 9]>
 		<link href="css/style_small.css" media="screen" rel="stylesheet" />
 		<link href="css/style_medium.css" media="screen" rel="stylesheet" />
@@ -37,12 +47,13 @@
 		<section id="mainContent">
 			<p>This is a basic HTML, CSS and JS template. It currently has:</p>
 			<ul>
-				<li>JS detection</li>
-				<li>HTML5 shim</li>
-				<li>Some media queries set to arbitrary break points</li>
-				<li>The iOS Orientation Change Fix (authored by @scottjehl, rebounded by @wilto)</li>
-				<li>Touch event handling through Hammer.JS with the jQuery helper to bind events</li>
-				<li>Conditional comments to add relevant classes for fixes</li>
+				<li>Code for favicon and apple-touch-icons (iPhone/iPad inc. retina) - currently commented, use as required.</li>
+				<li>Conditional comments to add relevant classes for IE fixes.</li>
+				<li>Some media queries set to arbitrary break points.</li>
+				<li>JS detection and switch from <a href="http://www.456bereastreet.com/archive/201209/tell_css_that_javascript_is_available_asap/">Roger Johansson</a>.</li>
+				<li>html5shim - <a href="https://code.google.com/p/html5shim/">https://code.google.com/p/html5shim/</a>.</li>
+				<li>The iOS Orientation Change Fix (authored by <a href="http://twitter.com/scottjehl">@scottjehl</a>, rebounded by <a href="http://twitter.com/wilto">@wilto</a>).</li>
+				<li>Touch event handling through <a href="http://eightmedia.github.com/hammer.js/">Hammer.JS</a> with the jQuery helper to bind events.</li>
 			</ul>
 		</section>
 

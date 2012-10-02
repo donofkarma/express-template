@@ -17,6 +17,10 @@ This template uses (all included):
 Changelog
 ---------------------
 
+### 0.2
+- Adding favicon and apple-touch-icon options
+- Adding IE rendering meta info
+
 ### 0.1
 - Adding initial code
 
