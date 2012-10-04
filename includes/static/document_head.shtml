@@ -6,7 +6,12 @@
 <head>
 	<meta charset="utf-8" />
 
-	<title>HTML/CSS/JS Template</title>
+	<title>
+		<!--#if expr="${pageName} != ''" -->
+			<!--#echo var="pageName"--> -
+		<!--#endif -->
+		HTML/CSS/JS Template
+	</title>
 	<script>
 		// set js enabled class - replaces 'no-js' with 'js'
 		document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1' + 'js' + '$2');
