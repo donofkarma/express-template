@@ -1,0 +1,22 @@
+<!--#include virtual="includes/static/document_head.shtml" -->
+
+		<header id="header">
+			<h1>HTML/CSS/JS Template</h1>
+		</header>
+
+		<section id="mainContent">
+			<p>This is a basic HTML, CSS and JS template. It currently has:</p>
+			<ul>
+				<li>Code for favicon and apple-touch-icons (iPhone/iPad inc. retina) - currently commented, use as required.</li>
+				<li>Conditional comments to add relevant classes for IE fixes.</li>
+				<li>Some media queries set to arbitrary break points.</li>
+				<li>JS detection and switch from <a href="http://www.456bereastreet.com/archive/201209/tell_css_that_javascript_is_available_asap/">Roger Johansson</a>.</li>
+				<li>html5shim - <a href="https://code.google.com/p/html5shim/">https://code.google.com/p/html5shim/</a>.</li>
+				<li>The iOS Orientation Change Fix (authored by <a href="http://twitter.com/scottjehl">@scottjehl</a>, rebounded by <a href="http://twitter.com/wilto">@wilto</a>).</li>
+				<li>Touch event handling through <a href="http://eightmedia.github.com/hammer.js/">Hammer.JS</a> with the jQuery helper to bind events.</li>
+			</ul>
+		</section>
+
+		<footer id="footer"></footer>
+
+<!--#include virtual="includes/static/document_foot.shtml" -->

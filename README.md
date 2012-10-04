@@ -17,6 +17,9 @@ This template uses (all included):
 Changelog
 ---------------------
 
+### 0.3
+- Split common sections into SSIs for multiple page setups
+
 ### 0.2
 - Adding favicon and apple-touch-icon options
 - Adding IE rendering meta info
