@@ -1,6 +1,7 @@
 <!--#set var="pageName" value="" -->
 <!--#include virtual="includes/static/document_head.shtml" -->
 
+	<div id="pageWrapper">
 		<header id="header">
 			<h1>HTML/CSS/JS Template</h1>
 		</header>
@@ -19,5 +20,6 @@
 		</section>
 
 		<footer id="footer"></footer>
+	</div><!-- #pageWrapper -->
 
 <!--#include virtual="includes/static/document_foot.shtml" -->

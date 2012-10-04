@@ -1,9 +1,7 @@
-	</div><!-- #pageWrapper -->
-
-	<script src="js/libs/touch/ios-orientationchange-fix.js"></script>
-	<script src="js/libs/jquery/jquery-1.8.0.min.js"></script>
-	<script src="js/libs/touch/hammer.js"></script>
-	<script src="js/libs/touch/jquery.hammer.js"></script>
-	<script src="js/script.js"></script>
+	<script src="<!--#echo var="SITE_PATH" -->js/libs/touch/ios-orientationchange-fix.js"></script>
+	<script src="<!--#echo var="SITE_PATH" -->js/libs/jquery/jquery-1.8.0.min.js"></script>
+	<script src="<!--#echo var="SITE_PATH" -->js/libs/touch/hammer.js"></script>
+	<script src="<!--#echo var="SITE_PATH" -->js/libs/touch/jquery.hammer.js"></script>
+	<script src="<!--#echo var="SITE_PATH" -->js/script.js"></script>
 </body>
 </html>

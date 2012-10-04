@@ -1,3 +1,5 @@
+<!--#set var="SITE_PATH" value="" -->
+
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html lang="en-gb" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html lang="en-gb" class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -22,26 +24,25 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
 
 	<!-- site icons -->
-	<!--<link rel="shortcut icon" href="images/icons/favicon.ico" />
-	<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-ipad.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-touch-icon-retina.png" />
-	<link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-touch-icon-ipad-retina.png" />-->
+	<!--<link rel="shortcut icon" href="<!--#echo var="SITE_PATH" -->images/icons/favicon.ico" />
+	<link rel="apple-touch-icon" href="<!--#echo var="SITE_PATH" -->images/icons/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<!--#echo var="SITE_PATH" -->images/icons/apple-touch-icon-ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<!--#echo var="SITE_PATH" -->images/icons/apple-touch-icon-retina.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="<!--#echo var="SITE_PATH" -->images/icons/apple-touch-icon-ipad-retina.png" />-->
 
 	<!-- stylesheets -->
-	<link href="css/reset.css" media="screen" rel="stylesheet" />
-	<link href="css/style.css" media="screen" rel="stylesheet" />
-	<link href="css/style_small.css" media="screen and (min-width: 479px)" rel="stylesheet" />
-	<link href="css/style_medium.css" media="screen and (min-width: 767px)" rel="stylesheet" />
-	<link href="css/style_large.css" media="screen and (min-width: 959px)" rel="stylesheet" />
+	<link href="<!--#echo var="SITE_PATH" -->css/reset.css" media="screen" rel="stylesheet" />
+	<link href="<!--#echo var="SITE_PATH" -->css/style.css" media="screen" rel="stylesheet" />
+	<link href="<!--#echo var="SITE_PATH" -->css/style_small.css" media="screen and (min-width: 479px)" rel="stylesheet" />
+	<link href="<!--#echo var="SITE_PATH" -->css/style_medium.css" media="screen and (min-width: 767px)" rel="stylesheet" />
+	<link href="<!--#echo var="SITE_PATH" -->css/style_large.css" media="screen and (min-width: 959px)" rel="stylesheet" />
 	<!-- add all stylesheets and html5shim to <IE9 -->
 	<!--[if lt IE 9]>
-		<link href="css/style_small.css" media="screen" rel="stylesheet" />
-		<link href="css/style_medium.css" media="screen" rel="stylesheet" />
-		<link href="css/style_large.css" media="screen" rel="stylesheet" />
+		<link href="<!--#echo var="SITE_PATH" -->css/style_small.css" media="screen" rel="stylesheet" />
+		<link href="<!--#echo var="SITE_PATH" -->css/style_medium.css" media="screen" rel="stylesheet" />
+		<link href="<!--#echo var="SITE_PATH" -->css/style_large.css" media="screen" rel="stylesheet" />
 
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
 <body>
-	<div id="pageWrapper">
