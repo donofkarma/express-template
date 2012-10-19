@@ -22,4 +22,5 @@
 		<footer id="footer"></footer>
 	</div><!-- #pageWrapper -->
 
+<!--#include virtual="includes/static/document_script.shtml" -->
 <!--#include virtual="includes/static/document_foot.shtml" -->
