@@ -14,6 +14,11 @@ This template uses (all included):
 - Hammer.JS jQuery plugin v0.3
 - iOS Orientation Change Fix (authored by @scottjehl, rebounded by @wilto)
 
+To-do
+---------------------
+- Add responsive navigation pattern
+- Add grunt.js build process
+
 Changelog
 ---------------------
 
