@@ -1,12 +1,3 @@
-/**
-* HTML/CSS/JS Template
-*
-* @version	0.2
-* @author	Jasal Vadgama - http://blacklabelcreative.com/
-* @require	jquery 1.8.0
-* @license	MIT
-**/
-
 /*jslint eqeqeq: true, undef: true */
 /*global $, window, console, alert */
 

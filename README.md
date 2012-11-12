@@ -17,10 +17,14 @@ This template uses (all included):
 To-do
 ---------------------
 - Add responsive navigation pattern
-- Add grunt.js build process
+- Add CSS minification to grunt.js build
+- Add .shtml file concatenation to grunt.js build
 
 Changelog
 ---------------------
+
+### 0.4
+- Added grunt.js build process for JS concatenation and minification
 
 ### 0.3
 - Split common sections into SSIs for multiple page setups
