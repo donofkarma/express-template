@@ -1,20 +1,31 @@
 /*global module:false*/
 
 module.exports = function(grunt) {
+	// load any module dependcies
+	grunt.loadNpmTasks('grunt-css');
+
 	// Project configuration.
 	grunt.initConfig({
 		meta: {
 			name: 'HTML/CSS/JS Template',
-			version: '0.2',
-			banner: '/**\n' +
-					'* <%= meta.name %>\n' +
-					'*\n' +
-					'* @version	<%= meta.version %>\n' +
-					'* @author	Jasal Vadgama - http://blacklabelcreative.com/\n' +
-					'* @require	jQuery 1.8.0\n' +
-					'*			Hammer.js\n' +
-					'* @license	MIT\n' +
-					'**/\n'
+			js_version: '0.4',
+			js_banner: '/**\n' +
+				'* <%= meta.name %>\n' +
+				'*\n' +
+				'* @version	<%= meta.js_version %>\n' +
+				'* @author	Jasal Vadgama - http://blacklabelcreative.com/\n' +
+				'* @require	jQuery 1.8.0\n' +
+				'*			Hammer.js\n' +
+				'* @license	MIT\n' +
+				'**/\n',
+			css_version: '0.4',
+			css_banner: '/**\n' +
+				'* <%= meta.name %>\n' +
+				'*\n' +
+				'* @version	<%= meta.css_version %>\n' +
+				'* @author	Jasal Vadgama - http://blacklabelcreative.com/\n' +
+				'* @license	MIT\n' +
+				'**/\n'
 		},
 		lint: {
 			files: ['grunt.js', 'assets/js/script.js']
@@ -39,8 +50,30 @@ module.exports = function(grunt) {
 				dest: 'dist/assets/js/libs.min.js'
 			},
 			custom: {
-				src: ['<banner:meta.banner>', 'assets/js/script.js'],
+				src: ['<banner:meta.js_banner>', 'assets/js/script.js'],
 				dest: 'dist/assets/js/script.min.js'
+			}
+		},
+		cssmin: {
+			reset: {
+				src: ['<banner:meta.css_banner>', 'assets/css/reset.css'],
+				dest: 'dist/assets/css/reset.min.css'
+			},
+			style: {
+				src: ['<banner:meta.css_banner>', 'assets/css/style.css'],
+				dest: 'dist/assets/css/style.min.css'
+			},
+			style_small: {
+				src: ['<banner:meta.css_banner>', 'assets/css/style_small.css'],
+				dest: 'dist/assets/css/style_small.min.css'
+			},
+			style_medium: {
+				src: ['<banner:meta.css_banner>', 'assets/css/style_medium.css'],
+				dest: 'dist/assets/css/style_medium.min.css'
+			},
+			style_large: {
+				src: ['<banner:meta.css_banner>', 'assets/css/style_large.css'],
+				dest: 'dist/assets/css/style_large.min.css'
 			}
 		},
 		watch: {
@@ -70,5 +103,5 @@ module.exports = function(grunt) {
 
 	// Default task.
 	//grunt.registerTask('default', 'lint qunit concat min');
-	grunt.registerTask('default', 'lint concat min');
+	grunt.registerTask('default', 'lint concat min cssmin');
 };
