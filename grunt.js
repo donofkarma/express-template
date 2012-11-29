@@ -33,8 +33,8 @@ module.exports = function(grunt) {
 		},
 		jasmine : {
 			src : 'assets/js/**/*.js',
-			specs : 'jasmine/spec/**/*_spec.js',
-			helpers : 'jasmine/spec/**/*_helper.js'
+			specs : 'test/spec/**/*_spec.js',
+			helpers : 'test/spec/**/*_helper.js'
 		},
 		concat: {
 			libs: {
@@ -78,33 +78,14 @@ module.exports = function(grunt) {
 				src: ['<banner:meta.css_banner>', 'assets/css/style_large.css'],
 				dest: 'dist/assets/css/style_large.min.css'
 			}
-		},
+		}/*,
 		watch: {
 			files: '<config:lint.files>',
 			tasks: 'lint qunit'
-		},
-		jshint: {
-			options: {
-				curly: true,
-				eqeqeq: true,
-				immed: true,
-				latedef: true,
-				newcap: true,
-				noarg: true,
-				sub: true,
-				undef: true,
-				boss: true,
-				eqnull: true,
-				browser: true
-			},
-			globals: {
-				jQuery: true
-			}
-		},
-		uglify: {}
+		}*/
 	});
 
-	// Default task.
+	// tasks
 	grunt.registerTask('deploy', 'concat min cssmin');
 	grunt.registerTask('test', 'lint jasmine');
 	grunt.registerTask('default', 'lint jasmine concat min cssmin');
