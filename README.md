@@ -25,6 +25,7 @@ This template uses nodejs to execute concatenation, minification, linting and un
 To-do
 ---------------------
 
+- Add package.json
 - Add responsive navigation pattern
 
 Changelog
