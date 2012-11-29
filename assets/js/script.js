@@ -11,6 +11,10 @@ Template = (function() {
 	// PUBLIC METHODS
 	return {
 		init: function() {
+			// DOM ready
+		},
+		pageInit: function() {
+			// page load
 		}
 	};
 }());
@@ -22,4 +26,5 @@ $(function() {
 
 // ON PAGE LOAD
 $(window).load(function() {
+	Template.pageInit();
 });

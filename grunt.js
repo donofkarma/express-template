@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
 	// load any module dependcies
 	grunt.loadNpmTasks('grunt-css');
+	grunt.loadNpmTasks('grunt-jasmine-runner');
 
 	// Project configuration.
 	grunt.initConfig({
@@ -30,8 +31,10 @@ module.exports = function(grunt) {
 		lint: {
 			files: ['grunt.js', 'assets/js/script.js']
 		},
-		qunit: {
-			files: ['test/**/*.html']
+		jasmine : {
+			src : 'assets/js/**/*.js',
+			specs : 'jasmine/spec/**/*_spec.js',
+			helpers : 'jasmine/spec/**/*_helper.js'
 		},
 		concat: {
 			libs: {
@@ -102,6 +105,7 @@ module.exports = function(grunt) {
 	});
 
 	// Default task.
-	//grunt.registerTask('default', 'lint qunit concat min');
-	grunt.registerTask('default', 'lint concat min cssmin');
+	grunt.registerTask('deploy', 'concat min cssmin');
+	grunt.registerTask('test', 'lint jasmine');
+	grunt.registerTask('default', 'lint jasmine concat min cssmin');
 };
