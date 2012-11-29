@@ -14,16 +14,24 @@ This template uses (all included):
 - Hammer.JS jQuery plugin v0.3
 - iOS Orientation Change Fix (authored by @scottjehl, rebounded by @wilto)
 
+Tools
+---------------------
+
+This template uses nodejs to execute concatenation, minification, linting and unit testing (Jasmine v1.3.0). The following node modules are included:
+- gruntjs v0.3.17
+- grunt-css v0.3.2
+- grunt-jasmine-runner v0.6.0 (requires PhantomJS)
+
 To-do
 ---------------------
+
 - Add responsive navigation pattern
-- Add packages.json file
-- Add .shtml file concatenation to grunt.js build
 
 Changelog
 ---------------------
 
 ### 0.4
+- Added Jasmine TDD framework to grunt.js
 - Added grunt.js build process for JS concatenation and minification
 - Added grunt.js build process for CSS minification
 
