@@ -6,6 +6,8 @@
 * @author	Jasal Vadgama - http://blacklabelcreative.com/
 **/
 
+$margin-bottom: 1em;
+
 /**
 * General
 **/
@@ -17,7 +19,7 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 section {
-	margin-bottom: 2em;
+	margin-bottom: $margin-bottom * 2;
 }
 h1 {
 	margin-bottom: 1em;

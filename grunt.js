@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	// load any module dependcies
 	grunt.loadNpmTasks('grunt-css');
 	grunt.loadNpmTasks('grunt-jasmine-runner');
+	grunt.loadNpmTasks('grunt-sass');
 
 	// Project configuration.
 	grunt.initConfig({
@@ -31,6 +32,24 @@ module.exports = function(grunt) {
 		lint: {
 			files: ['grunt.js', 'assets/js/script.js']
 		},
+		jshint: {
+			options: {
+				curly: true,
+				eqeqeq: true,
+				immed: true,
+				latedef: true,
+				newcap: true,
+				noarg: true,
+				sub: true,
+				undef: true,
+				boss: true,
+				eqnull: true,
+				browser: true
+			},
+			globals: {
+				jQuery: true
+			}
+		},
 		jasmine : {
 			src : 'assets/js/**/*.js',
 			specs : 'test/spec/**/*_spec.js',
@@ -57,6 +76,13 @@ module.exports = function(grunt) {
 				dest: 'dist/assets/js/script.min.js'
 			}
 		},
+		sass: {
+			dev: {
+				files: {
+					'style.css': 'style.scss'
+				}
+			}
+		},
 		cssmin: {
 			reset: {
 				src: ['<banner:meta.css_banner>', 'assets/css/reset.css'],
@@ -81,25 +107,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			files: '<config:lint.files>',
-			tasks: 'lint qunit'
-		},
-		jshint: {
-			options: {
-				curly: true,
-				eqeqeq: true,
-				immed: true,
-				latedef: true,
-				newcap: true,
-				noarg: true,
-				sub: true,
-				undef: true,
-				boss: true,
-				eqnull: true,
-				browser: true
-			},
-			globals: {
-				jQuery: true
-			}
+			tasks: 'lint'
 		}
 	});
 

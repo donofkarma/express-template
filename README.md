@@ -21,6 +21,7 @@ This template uses nodejs to execute concatenation, minification, linting and un
 - gruntjs v0.3.17
 - grunt-css v0.3.2
 - grunt-jasmine-runner v0.6.0 (requires PhantomJS)
+- grunt-sass v0.2.5
 
 To-do
 ---------------------
