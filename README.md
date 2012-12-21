@@ -25,8 +25,7 @@ This template uses nodejs to execute concatenation, minification, linting and un
 To-do
 ---------------------
 
-- Add package.json
-- Add responsive navigation pattern
+- Add SASS with grunt.js script
 
 Changelog
 ---------------------
@@ -49,4 +48,4 @@ Changelog
 License
 ---------------------
 
-This work may be freely distributed under the MIT license.
+MIT: https://github.com/donofkarma/html-css-js-template/blob/master/LICENSE-MIT
