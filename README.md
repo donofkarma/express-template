@@ -23,11 +23,6 @@ This template uses nodejs to execute concatenation, minification, linting and un
 - grunt-jasmine-runner v0.6.0 (requires PhantomJS)
 - grunt-sass v0.2.5
 
-To-do
----------------------
-
-- Add SASS with grunt.js script
-
 Changelog
 ---------------------
 
@@ -35,6 +30,7 @@ Changelog
 - Added Jasmine TDD framework to grunt.js
 - Added grunt.js build process for JS concatenation and minification
 - Added grunt.js build process for CSS minification
+- Added SASS integration (with globals.scss)
 
 ### 0.3
 - Split common sections into SSIs for multiple page setups

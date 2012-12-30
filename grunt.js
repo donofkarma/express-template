@@ -1,12 +1,12 @@
 /*global module:false*/
 
 module.exports = function(grunt) {
-	// load any module dependcies
+	// Module dependcies
 	grunt.loadNpmTasks('grunt-css');
 	grunt.loadNpmTasks('grunt-jasmine-runner');
 	grunt.loadNpmTasks('grunt-sass');
 
-	// Project configuration.
+	// Project configuration
 	grunt.initConfig({
 		meta: {
 			name: 'HTML/CSS/JS Template',
@@ -76,10 +76,23 @@ module.exports = function(grunt) {
 				dest: 'dist/assets/js/script.min.js'
 			}
 		},
+		/*sass: {
+			dev: {
+				files: {
+					'assets/css/style.css': 'assets/css/style.scss',
+					'assets/css/style_small.css': 'assets/css/style_small.scss',
+					'assets/css/style_medium.css': 'assets/css/style_medium.scss',
+					'assets/css/style_large.css': 'assets/css/style_large.scss'
+				}
+			}
+		},*/
 		sass: {
 			dev: {
 				files: {
-					'style.css': 'style.scss'
+					'assets/css/style.css': 'assets/css/style.scss',
+					'assets/css/style_small.css': 'assets/css/style_small.scss',
+					'assets/css/style_medium.css': 'assets/css/style_medium.scss',
+					'assets/css/style_large.css': 'assets/css/style_large.scss'
 				}
 			}
 		},
@@ -106,13 +119,20 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			files: '<config:lint.files>',
-			tasks: 'lint'
+			sass: {
+				files: [
+					'assets/css/style.scss',
+					'assets/css/style_small.scss',
+					'assets/css/style_medium.scss',
+					'assets/css/style_large.scss'
+				],
+				tasks: 'sass'
+			}
 		}
 	});
 
-	// Default task.
-	grunt.registerTask('deploy', 'concat min cssmin');
+	// Tasks
+	grunt.registerTask('deploy', 'concat min sass cssmin');
 	grunt.registerTask('test', 'lint jasmine');
-	grunt.registerTask('default', 'lint jasmine concat min cssmin');
+	grunt.registerTask('default', 'lint jasmine concat min sass cssmin');
 };

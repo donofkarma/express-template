@@ -2,11 +2,14 @@
 * HTML/CSS/JS Template
 *
 * @info		Baseline and 320px styling
-* @version	0.2
+* @version	0.4
 * @author	Jasal Vadgama - http://blacklabelcreative.com/
 **/
 
-$margin-bottom: 1em;
+/**
+* Imports
+**/
+@import 'assets/css/globals.scss';
 
 /**
 * General
@@ -22,21 +25,21 @@ section {
 	margin-bottom: $margin-bottom * 2;
 }
 h1 {
-	margin-bottom: 1em;
+	margin-bottom: $margin-bottom;
 	font-size: 26px;
 	line-height: 1.2em;
 }
 h2 {
-	margin-bottom: 0.5em;
+	margin-bottom: $margin-bottom / 2;
 	font-size: 20px;
 	line-height: 1.2em;
 }
 h3 {
-	margin-bottom: 0.5em;
+	margin-bottom: $margin-bottom;
 }
 p,
 ul {
-	margin-bottom: 1em;
+	margin-bottom: $margin-bottom;
 }
 li {
 	margin: 0 0 5px 40px;
