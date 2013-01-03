@@ -5,8 +5,6 @@ After getting bored of setting up the same prototyping framework over and over a
 
 Feel free to use it as you wish. If you find any nice ways to improve it submit a pull request!
 
-* * *
-
 Libraries
 ---------------------
 
@@ -15,8 +13,6 @@ This template uses (all included):
 - Hammer.JS v0.6.1
 - Hammer.JS jQuery plugin v0.3
 - iOS Orientation Change Fix (authored by @scottjehl, rebounded by @wilto)
-
-* * *
 
 Getting started
 ---------------------
@@ -51,8 +47,6 @@ There are 3 build tasks included in the Gruntfile:
 2. deploy: this will compile the Sass files and minify the resulting CSS then concatenate and minify the JS
 3. default: this will run the test and then the deploy tasks
 
-* * *
-
 Changelog
 ---------------------
 
@@ -76,8 +70,6 @@ Changelog
 
 ### 0.1
 - Adding initial code
-
-* * *
 
 License
 ---------------------
