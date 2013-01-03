@@ -32,3 +32,4 @@ Thumbs.db
 #################
 _SpecRunner.html
 dist/
+node_modules/
