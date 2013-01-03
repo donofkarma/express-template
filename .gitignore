@@ -30,6 +30,7 @@ Thumbs.db
 
 # Project files #
 #################
-_SpecRunner.html
+.sass-cache/
 dist/
 node_modules/
+_SpecRunner.html

@@ -1,28 +1,35 @@
 {
-	"name": "html-css-js-template",
-	"description": "A template to build simple, responsive prototypes from.",
-	"version": "0.4.1",
-	"author": "Jasal Vadgama - http://blacklabelcreative.com/",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/donofkarma/html-css-js-template.git"
-	},
-	"licenses": [{
-		"type": "MIT",
-		"url": "https://github.com/donofkarma/html-css-js-template/blob/master/LICENSE-MIT"
-	}],
-	"main": "/",
-	"scripts": {
-		"test": "grunt test",
-		"deploy": "grunt deploy"
-	},
-	"engines": {
-		"node": ">= 0.8.0",
-		"grunt": ">= 0.3.17"
-	},
-	"dependencies": {
-		"grunt-css": ">= 0.3.2",
-		"grunt-jasmine-runner": ">= 0.6.0",
-		"grunt-sass": ">= 0.2.5"
-	}
+  "name": "html-css-js-template",
+  "description": "A template to build simple, responsive prototypes from.",
+  "version": "0.3.1",
+  "author": "Jasal Vadgama - http://blacklabelcreative.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/donofkarma/html-css-js-template.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/donofkarma/html-css-js-template/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "/",
+  "scripts": {
+    "test": "grunt test",
+    "deploy": "grunt deploy",
+    "all": "grunt"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-sass": "~ 0.2.1",
+    "grunt-contrib-mincss": "~0.3.2",
+    "grunt-contrib-jasmine": "~0.2.0",
+    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-contrib-concat": "~0.1.1",
+    "grunt-contrib-uglify": "~0.1.0",
+    "grunt-contrib-watch": "~0.1.4"
+  }
 }
