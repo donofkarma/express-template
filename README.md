@@ -19,7 +19,7 @@ Getting started
 
 ### Installation
 
-To use this template you need [node.js](http://nodejs.org/download/) (min v0.8.0), [grunt.js](https://github.com/gruntjs/grunt/wiki/Getting-started) (min v0.4.0), Ruby and Sass (for the sass task, [instructions here](https://github.com/gruntjs/grunt-contrib-sass#the-sass-task)).
+To use this template you need [node.js](http://nodejs.org/download/) (min v0.8.0), [grunt.js](https://github.com/gruntjs/grunt/wiki/Getting-started) (min v0.4.0), Ruby and Sass (both for the sass task, [instructions here](https://github.com/gruntjs/grunt-contrib-sass#the-sass-task)).
 
 Once this is set up, you need to install the additional grunt.js dependencies for the template. To do this, run the following in the downloaded root folder:
 
@@ -53,7 +53,7 @@ Changelog
 ### 0.3.1
 - Upgraded grunt to 0.4.0
 - Added packages.json file
-- Updating jQuery version to 1.8.
+- Updating jQuery version to 1.8.3
 
 ### 0.3.0
 - Added Jasmine TDD framework to grunt.js
