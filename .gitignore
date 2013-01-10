@@ -31,6 +31,7 @@ Thumbs.db
 # Project files #
 #################
 .sass-cache/
+assets/css/style*.css
 dist/
 node_modules/
 _SpecRunner.html

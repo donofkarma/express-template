@@ -50,6 +50,10 @@ There are 3 build tasks included in the Gruntfile:
 Changelog
 ---------------------
 
+### 0.3.2
+- Moved Sass files to their own folder
+- Renamed Sass partials
+
 ### 0.3.1
 - Upgraded grunt to 0.4.0
 - Added packages.json file
