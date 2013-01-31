@@ -51,6 +51,12 @@ Changelog
 ---------------------
 
 ### 0.3.2
+- Updating grunt and plugins to latest release candidates
+- Changing build path from dist/ to deploy/
+- Changing minified CSS filenames
+- Updating .gitignore
+
+### 0.3.2
 - Moved Sass files to their own folder
 - Renamed Sass partials
 

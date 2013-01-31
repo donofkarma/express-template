@@ -1,7 +1,7 @@
 {
   "name": "html-css-js-template",
   "description": "A template to build simple, responsive prototypes from.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Jasal Vadgama - http://blacklabelcreative.com/",
   "repository": {
     "type": "git",
@@ -24,12 +24,12 @@
   },
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-contrib-sass": "~ 0.2.1",
-    "grunt-contrib-mincss": "~0.3.2",
-    "grunt-contrib-jasmine": "~0.2.0",
-    "grunt-contrib-jshint": "~0.1.0",
-    "grunt-contrib-concat": "~0.1.1",
-    "grunt-contrib-uglify": "~0.1.0",
-    "grunt-contrib-watch": "~0.1.4"
+    "grunt-contrib-sass": "0.2.2rc7",
+    "grunt-contrib-mincss": "0.4.0rc7",
+    "grunt-contrib-jasmine": "0.3.0rc7",
+    "grunt-contrib-jshint": "0.1.1rc6",
+    "grunt-contrib-concat": "0.1.2rc6",
+    "grunt-contrib-uglify": "0.1.1rc6",
+    "grunt-contrib-watch": "0.2.0rc7"
   }
 }

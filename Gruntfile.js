@@ -28,11 +28,11 @@ module.exports = function(grunt) {
 		mincss: {
 			build: {
 				files: {
-					'dist/assets/css/reset.min.css': ['assets/css/reset.css'],
-					'dist/assets/css/style.min.css': ['assets/css/style.css'],
-					'dist/assets/css/style_small.min.css': ['assets/css/style_small.css'],
-					'dist/assets/css/style_medium.min.css': ['assets/css/style_medium.css'],
-					'dist/assets/css/style_large.min.css': ['assets/css/style_large.css']
+					'deploy/assets/css/reset.css': ['assets/css/reset.css'],
+					'deploy/assets/css/style.css': ['assets/css/style.css'],
+					'deploy/assets/css/style_small.css': ['assets/css/style_small.css'],
+					'deploy/assets/css/style_medium.css': ['assets/css/style_medium.css'],
+					'deploy/assets/css/style_large.css': ['assets/css/style_large.css']
 				}
 			}
 		},
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
 					'assets/js/libs/touch/hammer.js',
 					'assets/js/libs/touch/jquery.hammer.js'
 				],
-				dest: 'dist/assets/js/libs.js'
+				dest: 'deploy/assets/js/libs.js'
 			}
 		},
 		uglify: {
@@ -82,12 +82,12 @@ module.exports = function(grunt) {
 			},
 			libs: {
 				files: {
-					'dist/assets/js/libs.min.js': ['<%= concat.libs.dest %>']
+					'deploy/assets/js/libs.min.js': ['<%= concat.libs.dest %>']
 				}
 			},
 			custom: {
 				files: {
-					'dist/assets/js/script.min.js': ['assets/js/script.js']
+					'deploy/assets/js/script.min.js': ['assets/js/script.js']
 				}
 			}
 		},

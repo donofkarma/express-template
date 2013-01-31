@@ -32,6 +32,6 @@ Thumbs.db
 #################
 .sass-cache/
 assets/css/style*.css
+deploy/
 dist/
 node_modules/
-_SpecRunner.html
