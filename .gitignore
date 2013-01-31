@@ -30,8 +30,7 @@ Thumbs.db
 
 # Project files #
 #################
+.grunt/
 .sass-cache/
 assets/css/style*.css
-deploy/
-dist/
 node_modules/

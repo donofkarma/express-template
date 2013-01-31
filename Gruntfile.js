@@ -25,17 +25,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		mincss: {
-			build: {
-				files: {
-					'deploy/assets/css/reset.css': ['assets/css/reset.css'],
-					'deploy/assets/css/style.css': ['assets/css/style.css'],
-					'deploy/assets/css/style_small.css': ['assets/css/style_small.css'],
-					'deploy/assets/css/style_medium.css': ['assets/css/style_medium.css'],
-					'deploy/assets/css/style_large.css': ['assets/css/style_large.css']
-				}
-			}
-		},
 		jasmine: {
 			tests: {
 				src: 'assets/js/**/*.js',
@@ -64,33 +53,6 @@ module.exports = function(grunt) {
 			},
 			all: ['Gruntfile.js', 'assets/js/script.js']
 		},
-		concat: {
-			libs: {
-				src: [
-					'assets/js/libs/jquery/jquery-1.8.3.min.js',
-					'assets/js/libs/touch/ios-orientationchange-fix.js',
-					'assets/js/libs/touch/hammer.js',
-					'assets/js/libs/touch/jquery.hammer.js'
-				],
-				dest: 'deploy/assets/js/libs.js'
-			}
-		},
-		uglify: {
-			options: {
-				banner: '<%= meta.js_banner %>',
-				mangle: false
-			},
-			libs: {
-				files: {
-					'deploy/assets/js/libs.min.js': ['<%= concat.libs.dest %>']
-				}
-			},
-			custom: {
-				files: {
-					'deploy/assets/js/script.min.js': ['assets/js/script.js']
-				}
-			}
-		},
 		watch: {
 			sass: {
 				files: ['assets/scss/**/*.scss'],
@@ -108,12 +70,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-mincss');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s)
-	grunt.registerTask('default', ['sass', 'mincss', 'jasmine', 'jshint', 'concat', 'uglify']);
+	grunt.registerTask('default', ['sass', 'jasmine', 'jshint']);
 	grunt.registerTask('test', ['jasmine', 'jshint']);
-	grunt.registerTask('deploy', ['sass', 'mincss', 'concat', 'uglify']);
 };

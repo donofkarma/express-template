@@ -1,7 +1,7 @@
 HTML/CSS/JS Template
 ====================
 
-After getting bored of setting up the same prototyping framework over and over again, I decided to create this template. The main idea behind it is to make prototyping quick and easy but it contains most of the tools needed to be used as a project base.
+After getting bored of setting up the same prototyping framework over and over again, I decided to create this template. The main idea behind it is to make prototyping quick and easy.
 
 Feel free to use it as you wish. If you find any nice ways to improve it submit a pull request!
 
@@ -39,22 +39,22 @@ Once this is set up, you need to install the additional grunt.js dependencies fo
 
 ### Using the build tasks
 
-There are 3 build tasks included in the Gruntfile:
+There are 2 build tasks included in the Gruntfile:
 
-`grunt (test|deploy)`
+`grunt (test)`
 
 1. test: this will run the jasmine tests and lint the JS
-2. deploy: this will compile the Sass files and minify the resulting CSS then concatenate and minify the JS
-3. default: this will run the test and then the deploy tasks
+3. default: this will run the test and then compile the css
 
 Changelog
 ---------------------
 
-### 0.3.2
+### 0.3.3
 - Updating grunt and plugins to latest release candidates
 - Changing build path from dist/ to deploy/
 - Changing minified CSS filenames
 - Updating .gitignore
+- Stripping deployment grunt tasks to streamline the template
 
 ### 0.3.2
 - Moved Sass files to their own folder
