@@ -49,6 +49,9 @@ There are 2 build tasks included in the Gruntfile:
 Changelog
 ---------------------
 
+### 0.3.4
+- Updating to final releases for GruntJS 0.4.0
+
 ### 0.3.3
 - Updating grunt and plugins to latest release candidates
 - Changing build path from dist/ to deploy/
