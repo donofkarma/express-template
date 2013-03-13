@@ -44,13 +44,15 @@ There are 2 build tasks included in the Gruntfile:
 `grunt (test)`
 
 1. test: this will run the jasmine tests and lint the JS
-3. default: this will run the test and then compile the css
+2. default: this will run the test and then compile the css
 
 Changelog
 ---------------------
 
 ### 0.4.0
 - Removing some CSS files for cleaner build process
+- Removing SSI SITE_PATH var
+- Making assets serve from root instead of a relative path
 
 ### 0.3.4
 - Updating to final releases for GruntJS 0.4.0
