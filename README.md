@@ -49,7 +49,7 @@ There are 2 build tasks included in the Gruntfile:
 Changelog
 ---------------------
 
-### 0.4.0
+### 0.3.5
 - Removing some CSS files for cleaner build process
 - Removing SSI SITE_PATH var
 - Making assets serve from root instead of a relative path
