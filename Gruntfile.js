@@ -18,11 +18,11 @@ module.exports = function(grunt) {
 		sass: {
 			dev: {
 				files: {
-					'assets/css/style.css': 'assets/scss/style.scss',
+					'assets/css/style.css': 'assets/sass/style.scss',
 					'assets/css/ie.css' : [
-						'assets/scss/style_small.scss',
-						'assets/scss/style_medium.scss',
-						'assets/scss/style_large.scss'
+						'assets/sass/style_small.scss',
+						'assets/sass/style_medium.scss',
+						'assets/sass/style_large.scss'
 					]
 				}
 			}
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			sass: {
-				files: ['assets/scss/**/*.scss'],
+				files: ['assets/sass/**/*.scss'],
 				tasks: 'sass'
 			},
 			lint: {
