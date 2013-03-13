@@ -49,6 +49,11 @@ There are 2 build tasks included in the Gruntfile:
 Changelog
 ---------------------
 
+### 0.4.0
+- Removing SSI dependency
+- Adding ExpressJS framework for node.js
+- Adding jade templating
+
 ### 0.3.5
 - Removing some CSS files for cleaner build process
 - Removing SSI SITE_PATH var
