@@ -31,16 +31,10 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="<!--#echo var="SITE_PATH" -->assets/images/icons/apple-touch-icon-ipad-retina.png" />-->
 
 	<!-- stylesheets -->
-	<link href="<!--#echo var="SITE_PATH" -->assets/css/reset.css" media="screen" rel="stylesheet" />
 	<link href="<!--#echo var="SITE_PATH" -->assets/css/style.css" media="screen" rel="stylesheet" />
-	<link href="<!--#echo var="SITE_PATH" -->assets/css/style_small.css" media="screen and (min-width: 479px)" rel="stylesheet" />
-	<link href="<!--#echo var="SITE_PATH" -->assets/css/style_medium.css" media="screen and (min-width: 767px)" rel="stylesheet" />
-	<link href="<!--#echo var="SITE_PATH" -->assets/css/style_large.css" media="screen and (min-width: 959px)" rel="stylesheet" />
 	<!-- add all stylesheets and html5shim to <IE9 -->
 	<!--[if lt IE 9]>
-		<link href="<!--#echo var="SITE_PATH" -->assets/css/style_small.css" media="screen" rel="stylesheet" />
-		<link href="<!--#echo var="SITE_PATH" -->assets/css/style_medium.css" media="screen" rel="stylesheet" />
-		<link href="<!--#echo var="SITE_PATH" -->assets/css/style_large.css" media="screen" rel="stylesheet" />
+		<link href="<!--#echo var="SITE_PATH" -->assets/css/ie.css" media="screen" rel="stylesheet" />
 
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

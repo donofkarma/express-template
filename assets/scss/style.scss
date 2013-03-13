@@ -9,7 +9,10 @@
 /**
 * Imports
 **/
+/** SASS **/
 @import 'assets/scss/partials/_variables.scss';
+/** RESET **/
+@import 'assets/scss/reset.scss';
 
 /**
 * General
@@ -51,4 +54,17 @@ li {
 #pageWrapper {
 	margin: 1em auto 0;
 	width: 960px;
+}
+
+/** SMALL SCREEN **/
+@media screen and (min-width: 479px) {
+	@import 'assets/scss/style_small.scss';
+}
+/** MEDIUM SCREEN **/
+@media screen and (min-width: 767px) {
+	@import 'assets/scss/style_medium.scss';
+}
+/** LARGE SCREEN **/
+@media screen and (min-width: 959px) {
+	@import 'assets/scss/style_large.scss';
 }

@@ -19,9 +19,6 @@ module.exports = function(grunt) {
 			dev: {
 				files: {
 					'assets/css/style.css': 'assets/scss/style.scss',
-					'assets/css/style_small.css': 'assets/scss/style_small.scss',
-					'assets/css/style_medium.css': 'assets/scss/style_medium.scss',
-					'assets/css/style_large.css': 'assets/scss/style_large.scss',
 					'assets/css/ie.css' : [
 						'assets/scss/style_small.scss',
 						'assets/scss/style_medium.scss',

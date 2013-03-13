@@ -49,6 +49,9 @@ There are 2 build tasks included in the Gruntfile:
 Changelog
 ---------------------
 
+### 0.4.0
+- Removing some CSS files for cleaner build process
+
 ### 0.3.4
 - Updating to final releases for GruntJS 0.4.0
 
