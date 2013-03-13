@@ -22,24 +22,24 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 section {
-	margin-bottom: $margin-bottom * 2;
+	margin-bottom: $MARGIN_BOTTOM * 2;
 }
 h1 {
-	margin-bottom: $margin-bottom;
+	margin-bottom: $MARGIN_BOTTOM;
 	font-size: 26px;
 	line-height: 1.2em;
 }
 h2 {
-	margin-bottom: $margin-bottom / 2;
+	margin-bottom: $MARGIN_BOTTOM / 2;
 	font-size: 20px;
 	line-height: 1.2em;
 }
 h3 {
-	margin-bottom: $margin-bottom;
+	margin-bottom: $MARGIN_BOTTOM;
 }
 p,
 ul {
-	margin-bottom: $margin-bottom;
+	margin-bottom: $MARGIN_BOTTOM;
 }
 li {
 	margin: 0 0 5px 40px;

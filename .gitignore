@@ -33,4 +33,5 @@ Thumbs.db
 .grunt/
 .sass-cache/
 assets/css/style*.css
+assets/css/ie*.css
 node_modules/
