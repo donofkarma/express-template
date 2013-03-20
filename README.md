@@ -9,9 +9,8 @@ Libraries
 ---------------------
 
 This template uses (all included):
-- jQuery v1.8.0
-- Hammer.JS v0.6.1
-- Hammer.JS jQuery plugin v0.3
+- jQuery v1.9.1
+- Hammer.JS (with the jQuery component) v1.0.3
 - iOS Orientation Change Fix (authored by @scottjehl, rebounded by @wilto)
 
 Getting started
@@ -27,9 +26,9 @@ Once this is set up, you need to install the additional grunt.js dependencies fo
 
 ### Usage
 
-1) Run the grunt Sass task to compile the included .scss files. This way you won't get 404 errors when loading the project for the first time:
+1) Run the grunt deploy task to compile the included .scss and .js files. This way you won't get 404 errors when loading the project for the first time:
 
-`grunt sass`
+`grunt deploy`
 
 2) Run the grunt watch task to automatically compile the .scss files and lint the .js when you make changes:
 
@@ -39,12 +38,13 @@ Once this is set up, you need to install the additional grunt.js dependencies fo
 
 ### Using the build tasks
 
-There are 2 build tasks included in the Gruntfile:
+There are 3 build tasks included in the Gruntfile:
 
-`grunt (test)`
+`grunt (deploy|test)`
 
-1. test: this will run the jasmine tests and lint the JS
-2. default: this will run the test and then compile the css
+1. default: this will run the tests and then compile the CSS and JS
+2. deploy: this will compile the CSS and JS
+3. test: this will run the jasmine tests and lint the JS
 
 Release History
 ---------------------

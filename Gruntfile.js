@@ -30,8 +30,8 @@ module.exports = function(grunt) {
 		cssmin: {
 			compress: {
 				files: {
-					'assets/css/style_min.css': ['assets/css/style.css'],
-					'assets/css/ie_min.css': ['assets/css/ie.css']
+					'assets/css/style.min.css': ['assets/css/style.css'],
+					'assets/css/ie.min.css': ['assets/css/ie.css']
 				}
 			}
 		},
@@ -63,14 +63,27 @@ module.exports = function(grunt) {
 			},
 			all: ['Gruntfile.js', 'src/js/script.js']
 		},
+		uglify: {
+			options: {
+				mangle: {
+					except: ['jQuery']
+				}
+			},
+			deploy: {
+				files: {
+					'assets/js/lib.min.js': ['src/js/libs/jquery/*.js', 'src/js/libs/touch/*.js'],
+					'assets/js/script.min.js': ['src/js/script.js']
+				}
+			}
+		},
 		watch: {
 			sass: {
 				files: ['src/sass/**/*.scss'],
 				tasks: 'sass'
 			},
-			lint: {
+			script: {
 				files: '<%= jshint.all %>',
-				tasks: 'jshint'
+				tasks: ['jshint', 'uglify']
 			}
 		}
 	});
@@ -80,10 +93,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s)
-	grunt.registerTask('default', ['sass', 'cssmin', 'jasmine', 'jshint']);
+	grunt.registerTask('default', ['sass', 'cssmin', 'jasmine', 'jshint', 'uglify']);
 	grunt.registerTask('test', ['jasmine', 'jshint']);
-	grunt.registerTask('deploy', ['cssmin']);
+	grunt.registerTask('deploy', ['cssmin', 'uglify']);
 };
