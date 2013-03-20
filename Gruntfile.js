@@ -18,18 +18,26 @@ module.exports = function(grunt) {
 		sass: {
 			dev: {
 				files: {
-					'assets/css/style.css': 'assets/sass/style.scss',
+					'assets/css/style.css': 'src/sass/style.scss',
 					'assets/css/ie.css' : [
-						'assets/sass/style_small.scss',
-						'assets/sass/style_medium.scss',
-						'assets/sass/style_large.scss'
+						'src/sass/style_small.scss',
+						'src/sass/style_medium.scss',
+						'src/sass/style_large.scss'
 					]
+				}
+			}
+		},
+		cssmin: {
+			compress: {
+				files: {
+					'assets/css/style_min.css': ['assets/css/style.css'],
+					'assets/css/ie_min.css': ['assets/css/ie.css']
 				}
 			}
 		},
 		jasmine: {
 			tests: {
-				src: 'assets/js/**/*.js',
+				src: 'src/js/**/*.js',
 				options: {
 					specs: 'test/spec/**/*_spec.js',
 					helpers: 'test/spec/**/*_helper.js'
@@ -53,11 +61,11 @@ module.exports = function(grunt) {
 					jQuery: true
 				}
 			},
-			all: ['Gruntfile.js', 'assets/js/script.js']
+			all: ['Gruntfile.js', 'src/js/script.js']
 		},
 		watch: {
 			sass: {
-				files: ['assets/sass/**/*.scss'],
+				files: ['src/sass/**/*.scss'],
 				tasks: 'sass'
 			},
 			lint: {
@@ -68,12 +76,14 @@ module.exports = function(grunt) {
 	});
 
 	// Load tasks
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s)
-	grunt.registerTask('default', ['sass', 'jasmine', 'jshint']);
+	grunt.registerTask('default', ['sass', 'cssmin', 'jasmine', 'jshint']);
 	grunt.registerTask('test', ['jasmine', 'jshint']);
+	grunt.registerTask('deploy', ['cssmin']);
 };
