@@ -49,7 +49,7 @@ There are 3 build tasks included in the Gruntfile:
 Release History
 ---------------------
 
-For a full release history, see the [https://github.com/donofkarma/html-css-js-template/blob/master/CHANGELOG.md](Changelog).
+For a full release history, see the [Changelog](https://github.com/donofkarma/html-css-js-template/blob/master/CHANGELOG.md).
 
 License
 ---------------------
