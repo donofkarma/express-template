@@ -10,9 +10,9 @@
 * Imports
 **/
 /** SASS **/
-@import 'assets/sass/partials/_variables.scss';
+@import 'src/sass/partials/_variables.scss';
 /** RESET **/
-@import 'assets/sass/reset.scss';
+@import 'src/sass/reset.scss';
 
 /**
 * General
@@ -58,13 +58,13 @@ li {
 
 /** SMALL SCREEN **/
 @media screen and (min-width: 479px) {
-	@import 'assets/sass/style_small.scss';
+	@import 'src/sass/style_small.scss';
 }
 /** MEDIUM SCREEN **/
 @media screen and (min-width: 767px) {
-	@import 'assets/sass/style_medium.scss';
+	@import 'src/sass/style_medium.scss';
 }
 /** LARGE SCREEN **/
 @media screen and (min-width: 959px) {
-	@import 'assets/sass/style_large.scss';
+	@import 'src/sass/style_large.scss';
 }
