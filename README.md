@@ -18,7 +18,7 @@ Getting started
 
 ### Installation
 
-To use this template you need [node.js](http://nodejs.org/download/) (min v0.8.0), [grunt.js](https://github.com/gruntjs/grunt/wiki/Getting-started) (min v0.4.0), Ruby and Sass (both for the sass task, [instructions here](https://github.com/gruntjs/grunt-contrib-sass#the-sass-task)).
+To use this template you need [node.js](http://nodejs.org/download/) (min v0.10.0), [grunt.js](https://github.com/gruntjs/grunt/wiki/Getting-started) (min v0.4.0), Ruby and Sass (both for the sass task, [instructions here](https://github.com/gruntjs/grunt-contrib-sass#the-sass-task)).
 
 Once this is set up, you need to install the additional grunt.js dependencies for the template. To do this, run the following in the downloaded root folder:
 
