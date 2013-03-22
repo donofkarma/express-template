@@ -8,6 +8,7 @@ Changelog
 - Using /assets/ as a static resource deployment folder
 - Adding CSS and JS minification
 - Updating jQuery and HammerJS to latest versions
+- Updating node.js and grunt tasks to latest
 
 ### 0.3.5
 - Removing some CSS files for cleaner build process
