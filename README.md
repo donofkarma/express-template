@@ -22,17 +22,23 @@ To use this template you need [node.js](http://nodejs.org/download/) (min v0.10.
 
 Once this is set up, you need to install the additional grunt.js dependencies for the template. To do this, run the following in the downloaded root folder:
 
-`npm install`
+```shell
+npm install
+```
 
 ### Usage
 
 1) Run the grunt deploy task to compile the included .scss and .js files. This way you won't get 404 errors when loading the project for the first time:
 
-`grunt deploy`
+```shell
+grunt deploy
+```
 
 2) Run the grunt watch task to automatically compile the .scss files and lint the .js when you make changes:
 
-`grunt watch`
+```shell
+grunt watch
+```
 
 3) Write code!
 
@@ -40,7 +46,9 @@ Once this is set up, you need to install the additional grunt.js dependencies fo
 
 There are 3 build tasks included in the Gruntfile:
 
-`grunt (deploy|test)`
+```shell
+grunt (deploy|test)
+```
 
 1. default: this will run the tests and then compile the CSS and JS
 2. deploy: this will compile the CSS and JS

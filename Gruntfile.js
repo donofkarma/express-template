@@ -99,5 +99,5 @@ module.exports = function(grunt) {
 	// Default task(s)
 	grunt.registerTask('default', ['sass', 'cssmin', 'jasmine', 'jshint', 'uglify']);
 	grunt.registerTask('test', ['jasmine', 'jshint']);
-	grunt.registerTask('deploy', ['cssmin', 'uglify']);
+	grunt.registerTask('deploy', ['sass', 'cssmin', 'uglify']);
 };
