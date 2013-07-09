@@ -9,7 +9,7 @@ var express = require('express'),
 	app = express();
 
 /* Configure App */
-app.configure(function(){
+app.configure(function() {
 	// set the port number to listen to
 	app.set('port', process.env.PORT || 3000);
 
@@ -42,7 +42,7 @@ app.configure(function(){
 
 /* Routes */
 // 404 Error
-app.use(function(req, res, next){
+app.use(function(req, res, next) {
 	res.status(404);
 
 	// respond with html page
@@ -61,7 +61,7 @@ app.use(function(req, res, next){
 	res.type('txt').send('Not found');
 });
 // 500 Error
-app.use(function(err, req, res, next){
+app.use(function(err, req, res, next) {
 	// we may use properties of the error object
 	// here and next(err) appropriately, or if
 	// we possibly recovered from the error, simply next().
@@ -70,31 +70,31 @@ app.use(function(err, req, res, next){
 });
 
 // Homepage
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
 	res.render('index', {
 		title: 'Home'
 	});
 });
 
 // Test error pages
-app.get('/404', function(req, res, next){
+app.get('/404', function(req, res, next) {
 	// trigger a 404 since no other middleware
 	// will match /404 after this one, and we're not
 	// responding here
 	next();
 });
-app.get('/403', function(req, res, next){
+app.get('/403', function(req, res, next) {
 	// trigger a 403 error
 	var err = new Error('Not allowed!');
 	err.status = 403;
 	next(err);
 });
-app.get('/500', function(req, res, next){
+app.get('/500', function(req, res, next) {
 	// trigger a generic (500) error
 	next(new Error('keyboard cat!'));
 });
 
 /* Server */
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function() {
 	console.log("Express server listening on port " + app.get('port'));
 });
