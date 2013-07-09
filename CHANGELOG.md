@@ -1,6 +1,11 @@
 Changelog
 ---------------------
 
+### 0.4.1
+- Adding SASS mixins
+- Updating dependencies
+- Updating builds
+
 ### 0.4.0
 - Removing SSIs all together
 - Adding ExpressJS and Jade as templating engines
