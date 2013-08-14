@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 			},
 			deploy: {
 				files: {
-					'assets/js/lib.min.js': ['src/js/libs/jquery/*.js', 'src/js/libs/touch/*.js'],
+					'assets/js/lib.min.js': ['src/js/libs/**/*.js'],
 					'assets/js/script.min.js': ['src/js/script.js']
 				}
 			}
