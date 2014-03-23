@@ -1,6 +1,12 @@
 Changelog
 ---------------------
 
+### 0.4.2
+- Adding copying of images from /src to /assets
+- Updating SASS structure
+- Adding new responsive methodology to modularise SASS components
+- Updating conditional comments for IE classes
+
 ### 0.4.1
 - Adding SASS mixins
 - Updating dependencies
