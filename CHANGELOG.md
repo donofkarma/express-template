@@ -1,6 +1,11 @@
 Changelog
 ---------------------
 
+### 0.5.0
+- Updating to Express 4
+- Updating to latest Jade middleware
+- Further update to conditional comments to remove IE 10
+
 ### 0.4.2
 - Adding copying of images from /src to /assets
 - Updating SASS structure
