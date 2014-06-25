@@ -1,4 +1,4 @@
-HTML/CSS/JS Template v0.4.2
+HTML/CSS/JS Template v0.5.0
 ====================
 
 After getting bored of setting up the same prototyping framework over and over again, I decided to create this template. The main idea behind it is to make prototyping quick and easy.
