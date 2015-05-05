@@ -3,14 +3,14 @@
 **/
 
 // Media Queries
-$smallScreen: 479px;
-$mediumScreen: 767px;
-$largeScreen: 959px;
+$extraSmallScreen: 320px;
+$smallScreen: 480px;
+$mediumScreen: 768px;
+$largeScreen: 960px;
+$wideScreen: 1200px;
 $isOldIE: false !default;
 
 // Colours
-$background: #fff;
-$links: #000;
-
-// Spacing
-$STD_DISTANCE: 1em;
+$black: #000;
+$purple: #862165;
+$white: #fff;

@@ -30,7 +30,7 @@ Thumbs.db
 
 # Project files #
 #################
-.grunt/
-.sass-cache/
+_site/
 assets/
+bower_components/
 node_modules/

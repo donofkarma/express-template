@@ -1,30 +1,14 @@
-/*jslint eqeqeq: true, undef: true */
-/*global $, window, console, alert */
+var Template = (function() {
 
-var Template = Template || {};
+    "use strict";
 
-Template = (function() {
-	// PRIVATE VARIABLES
+    var $ = require('jquery');
+    var Boilerplate = require('./modules/boilerplate');
 
-	// PRIVATE FUNCTIONS
+    $(function() {
+        console.log('script.js running...');
 
-	// PUBLIC METHODS
-	return {
-		init: function() {
-			// DOM ready
-		},
-		pageInit: function() {
-			// page load
-		}
-	};
-}());
+        var boilerplate = new Boilerplate();
+    });
 
-// ON DOM READY
-$(function() {
-	Template.init();
-});
-
-// ON PAGE LOAD
-$(window).load(function() {
-	Template.pageInit();
-});
+})();

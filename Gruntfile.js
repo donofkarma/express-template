@@ -1,33 +1,67 @@
-/*global module:false*/
-
 module.exports = function(grunt) {
-    // Project configuration
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        // meta: {
-        //     js_banner: '/**\n' +
-        //         '* <%= pkg.name %>\n' +
-        //         '*\n' +
-        //         '* @version <%= pkg.version %>\n' +
-        //         '* @author  <%= pkg.author %>\n' +
-        //         '* @require jQuery 1.8.3\n' +
-        //         '*          Hammer.js\n' +
-        //         '* @license <%= pkg.licenses[0].type %> - <%= pkg.licenses[0].url %>\n' +
-        //         '**/\n'
-        // },
+        clean: {
+            all: ['_site'],
+            fonts: ['_site/assets/fonts'],
+            images: ['_site/assets/images'],
+            sass: ['_site/assets/css'],
+            script: ['_site/assets/js']
+        },
+        copy: {
+            fonts: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src/fonts/',
+                        src: ['**'],
+                        dest: '_site/assets/fonts/'
+                    }
+                ]
+            },
+            images: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src/images/public/',
+                        src: ['**'],
+                        dest: '_site/assets/images/'
+                    }
+                ]
+            }
+        },
+        jade: {
+            compile: {
+                options: {
+                    data: {
+                        error: {
+                            status: '500',
+                            message: 'Keyboard cat!'
+                        }
+                    },
+                    pretty: true
+                },
+                files: [
+                    {
+                        cwd: "views",
+                        src: "*.jade",
+                        dest: "_site",
+                        expand: true,
+                        ext: ".html"
+                    }
+                ]
+            }
+        },
         sass: {
             main: {
                 files: {
-                    'assets/css/style.css': 'src/sass/style.scss',
-                    'assets/css/ie.css' : 'src/sass/ie.scss'
+                    '_site/assets/css/style.css': 'src/sass/style.scss'
                 }
             }
         },
         cssmin: {
             main: {
                 files: {
-                    'assets/css/style.css': ['assets/css/style.css'],
-                    'assets/css/ie.css': ['assets/css/ie.css']
+                    '_site/assets/css/style.css': ['_site/assets/css/style.css']
                 }
             }
         },
@@ -45,21 +79,28 @@ module.exports = function(grunt) {
                 eqnull: true,
                 browser: true,
                 globals: {
-                    jQuery: true
+                    $: true,
+                    alert: true,
+                    console: true,
+                    jQuery: true,
+                    module: true,
+                    require: true,
+                    window: true
                 }
             },
             all: [
-                'Gruntfile.js',
-                'src/js/script.js'
+                'src/js/**/*.js'
             ]
         },
-        jasmine: {
-            tests: {
-                src: 'src/js/**/*.js',
-                options: {
-                    specs: 'test/spec/**/*_spec.js',
-                    helpers: 'test/spec/**/*_helper.js'
+        browserify: {
+            options: {
+                alias: {
+                    'jquery': './bower_components/jquery/dist/jquery.js'
                 }
+            },
+            main: {
+                src: 'src/js/script.js',
+                dest: '_site/assets/js/script.js'
             }
         },
         uglify: {
@@ -70,56 +111,48 @@ module.exports = function(grunt) {
             },
             deploy: {
                 files: {
-                    'assets/js/libs.js': ['src/js/libs/**/*.js'],
-                    'assets/js/script.js': ['src/js/script.js']
+                    '_site/assets/js/script.js': ['_site/assets/js/script.js']
                 }
             }
         },
-        copy: {
-            // fonts: {
-            //     files: [
-            //         {
-            //             expand: true,
-            //             cwd: 'src/fonts/',
-            //             src: ['**'],
-            //             dest: 'assets/fonts/'
-            //         }
-            //     ]
-            // },
-            images: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'src/images/public/',
-                        src: ['**'],
-                        dest: 'assets/images/'
-                    }
-                ]
-            }
-        },
         watch: {
+            fonts: {
+                files: ['src/fonts/**/*.*'],
+                tasks: ['clean:fonts', 'copy:fonts']
+            },
+            images: {
+                files: ['src/images/public/**/*.*'],
+                tasks: ['clean:images', 'copy:images']
+            },
             sass: {
                 files: ['src/sass/**/*.scss'],
-                tasks: 'sass'
+                tasks: ['clean:sass', 'sass']
             },
             script: {
                 files: '<%= jshint.all %>',
-                tasks: ['jshint', 'uglify']
+                tasks: ['jshint', 'clean:script', 'browserify']
             }
+        },
+        nodemon: {
+            main: {
+                script: 'app.js'
+            }
+        },
+        concurrent: {
+            options: {
+                logConcurrentOutput: true
+            },
+            tasks: ['nodemon', 'watch']
         }
     });
 
     // Load tasks
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-jasmine');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     // Default task(s)
-    grunt.registerTask('test', ['jshint', 'jasmine']);
-    grunt.registerTask('build', ['sass', 'cssmin', 'uglify', 'copy']);
-    grunt.registerTask('default', ['test', 'build']);    
+    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('build', ['clean:all', 'copy', /*'jade',*/ 'sass', 'browserify']);
+    grunt.registerTask('deploy', ['test', 'build', 'cssmin', 'uglify']);
+    grunt.registerTask('serve', ['concurrent']);
+    grunt.registerTask('default', ['build', 'serve']);
 };

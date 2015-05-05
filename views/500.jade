@@ -1,11 +1,8 @@
-extends layout
+extends ./partials/layout/layout
 
 block content
-	#pageWrapper
-		header#header
-			h1 There was a server error!
 
-		#mainContent
-			p #{error.status} - #{error.message}
+    #content
+        h1 There was a server error!
 
-		footer#footer
+        p #{error.status} - #{error.message}

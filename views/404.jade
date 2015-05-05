@@ -1,11 +1,8 @@
-extends layout
+extends ./partials/layout/layout
 
 block content
-	#pageWrapper
-		header#header
-			h1 Page not found!
 
-		#mainContent
-			p The page you were looking for (#{url}) can't be found.
+    #content
+        h1 Page not found!
 
-		footer#footer
+        p The page you were looking for can't be found.

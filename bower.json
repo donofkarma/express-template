@@ -1,0 +1,12 @@
+{
+    "name": "node-jade-sass-js-template",
+    "description": "A template to build simple, responsive prototypes from.",
+    "version": "0.5.1",
+    "author": "Jasal Vadgama - http://blacklabelcreative.com/",
+    "private": true,
+    "main": "/",
+    "dependencies": {
+        "jquery": "2.1.x",
+        "normalize-scss": "3.0.x"
+    }
+}

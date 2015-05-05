@@ -1,6 +1,9 @@
 Changelog
 ---------------------
 
+### 0.5.1
+- Adding bower.io for external dependencies
+
 ### 0.5.0
 - Updating to Express 4
 - Updating to latest Jade middleware

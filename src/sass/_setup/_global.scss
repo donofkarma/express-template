@@ -2,25 +2,34 @@
 * Global styles
 **/
 
-section {
-    margin-bottom: $STD_DISTANCE * 2;
+body {
+    background: $white;
+    color: #333;
+    font: 14px/1.2em Arial, Helvetica, sans-serif;
 }
+
+section {
+    margin-bottom: 2em;
+}
+
 h1 {
-    margin-bottom: $STD_DISTANCE;
+    margin-bottom: 1em;
     font-size: 26px;
     line-height: 1.2em;
 }
 h2 {
-    margin-bottom: $STD_DISTANCE / 2;
+    margin-bottom: 0.5em;
     font-size: 20px;
     line-height: 1.2em;
 }
 h3 {
-    margin-bottom: $STD_DISTANCE;
+    margin-bottom: 1em;
 }
+
 p,
 ul {
-    margin-bottom: $STD_DISTANCE;
+    margin-bottom: 1em;
+    padding: 0;
     list-style: disc;
 }
 li {
