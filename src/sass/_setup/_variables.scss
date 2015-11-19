@@ -1,16 +1,38 @@
-/**
-* Variables
-**/
+/* Variables */
+$assetPath: '/assets/';
+$fontPath: $assetPath + 'fonts/';
+$imagePath: $assetPath + 'images/';
 
-// Media Queries
+
+/* Breakpoints */
 $extraSmallScreen: 320px;
 $smallScreen: 480px;
-$mediumScreen: 768px;
-$largeScreen: 960px;
+$mediumScreen: 850px;
+$largeScreen: 1024px;
 $wideScreen: 1200px;
-$isOldIE: false !default;
 
-// Colours
+/* Colours */
+// brand
+
+// style
+$background: #efefef;
+$copy: #333;
+
+// general
 $black: #000;
-$purple: #862165;
 $white: #fff;
+
+
+/* Animation */
+$transition-duration: 0.5s;
+$easing: ease-out;
+
+
+/* Fonts */
+// body copy
+// @include font-face($name: 'Futura Light', $filename: 'futura_light-webfont');
+$BodyCopy: Helvetica, Arial, sans-serif;
+
+// headings
+// @include font-face($name: 'VAG Rounded Light', $filename: 'vag_rounded_light-webfont');
+$HeadingCopy: Helvetica, Arial, sans-serif;

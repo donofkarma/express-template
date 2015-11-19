@@ -1,8 +1,6 @@
 extends ./partials/layout/layout
 
 block content
+    h1 There was a server error!
 
-    #content
-        h1 There was a server error!
-
-        p #{error.status} - #{error.message}
+    p #{error.status} - #{error.message}

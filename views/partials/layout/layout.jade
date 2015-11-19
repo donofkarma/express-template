@@ -1,12 +1,11 @@
-doctype html
-<!--[if lte IE 9]><html lang="en-gb" class="no-js lt-ie10"><![endif]-->
-<!--[if gt IE 9]><!--><html lang="en-gb" class="no-js"><!--<![endif]-->
-
-include ./document_head.html
+include ./document_head.jade
 
 body
-    block content
+    //- include ./header.jade
 
-    include ./document_script.html
+    main#content
+        block content
 
-</html>
+    //- include ./footer.jade
+
+    include ./document_script.jade

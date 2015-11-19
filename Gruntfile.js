@@ -1,11 +1,29 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        vars: {
+            buildDir: '_site',
+            cssBuildDir: '_site/assets/css',
+            fontsBuildDir: '_site/assets/fonts',
+            imagesBuildDir: '_site/assets/images',
+            scriptBuildDir: '_site/assets/js'
+        },
         clean: {
-            all: ['_site'],
-            fonts: ['_site/assets/fonts'],
-            images: ['_site/assets/images'],
-            sass: ['_site/assets/css'],
-            script: ['_site/assets/js']
+            all: {
+                src: ['<%= vars.buildDir %>']
+            },
+            fonts: {
+                src: ['<%= vars.fontsBuildDir %>']
+            },
+            images: {
+                src: ['<%= vars.imagesBuildDir %>']
+            },
+            style: {
+                src: ['<%= vars.cssBuildDir %>']
+            },
+            script: {
+                src: ['<%= vars.scriptBuildDir %>']
+            }
         },
         copy: {
             fonts: {
@@ -14,7 +32,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/fonts/',
                         src: ['**'],
-                        dest: '_site/assets/fonts/'
+                        dest: '<%= vars.fontsBuildDir %>'
                     }
                 ]
             },
@@ -24,7 +42,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/images/public/',
                         src: ['**'],
-                        dest: '_site/assets/images/'
+                        dest: '<%= vars.imagesBuildDir %>'
                     }
                 ]
             }
@@ -54,53 +72,28 @@ module.exports = function(grunt) {
         sass: {
             main: {
                 files: {
-                    '_site/assets/css/style.css': 'src/sass/style.scss'
+                    '<%= vars.cssBuildDir %>/style.css': 'src/sass/style.scss'
                 }
             }
         },
         cssmin: {
             main: {
                 files: {
-                    '_site/assets/css/style.css': ['_site/assets/css/style.css']
+                    '<%= vars.cssBuildDir %>/style.css': ['<%= vars.cssBuildDir %>/style.css']
                 }
             }
         },
         jshint: {
             options: {
-                curly: true,
-                eqeqeq: true,
-                immed: true,
-                latedef: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                undef: true,
-                boss: true,
-                eqnull: true,
-                browser: true,
-                globals: {
-                    $: true,
-                    alert: true,
-                    console: true,
-                    jQuery: true,
-                    module: true,
-                    require: true,
-                    window: true
-                }
+                jshintrc: './.jshintrc'
             },
-            all: [
-                'src/js/**/*.js'
-            ]
+            main: ['src/js/**/*.js']
         },
         browserify: {
-            options: {
-                alias: {
-                    'jquery': './bower_components/jquery/dist/jquery.js'
-                }
-            },
             main: {
-                src: 'src/js/script.js',
-                dest: '_site/assets/js/script.js'
+                files: {
+                    '<%= vars.scriptBuildDir %>/script.js': ['src/js/script.js'],
+                }
             }
         },
         uglify: {
@@ -111,7 +104,7 @@ module.exports = function(grunt) {
             },
             deploy: {
                 files: {
-                    '_site/assets/js/script.js': ['_site/assets/js/script.js']
+                    '<%= vars.scriptBuildDir %>/script.js': ['<%= vars.scriptBuildDir %>/script.js']
                 }
             }
         },
@@ -126,11 +119,11 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ['src/sass/**/*.scss'],
-                tasks: ['clean:sass', 'sass']
+                tasks: ['sass']
             },
             script: {
-                files: '<%= jshint.all %>',
-                tasks: ['jshint', 'clean:script', 'browserify']
+                files: 'src/js/**/*.*',
+                tasks: ['jshint', 'browserify']
             }
         },
         nodemon: {

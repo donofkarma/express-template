@@ -6,7 +6,7 @@
     "private": true,
     "main": "/",
     "dependencies": {
-        "jquery": "2.1.x",
-        "normalize-scss": "3.0.x"
+        "normalize-scss": "3.0.x",
+        "sass-mq": "latest"
     }
 }

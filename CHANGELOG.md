@@ -2,6 +2,10 @@ Changelog
 ---------------------
 
 ### 0.5.1
+- Updating packages
+- New SASS layout
+
+### 0.5.1
 - Adding bower.io for external dependencies
 
 ### 0.5.0

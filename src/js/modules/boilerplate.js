@@ -1,8 +1,6 @@
-var $ = require('jquery');
+"use strict"
 
 var Boilerplate = function() {
-
-    "use strict";
 
     console.log('./modules/boilerplate.js running...');
 

@@ -31,6 +31,5 @@ Thumbs.db
 # Project files #
 #################
 _site/
-assets/
 bower_components/
 node_modules/

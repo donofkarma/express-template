@@ -1,14 +1,26 @@
-var Template = (function() {
+/* jslint unused: false */
 
-    "use strict";
+"use strict";
 
-    var $ = require('jquery');
-    var Boilerplate = require('./modules/boilerplate');
+// Globals
+window.jQuery = window.$ = require('jquery');
 
+// Main app
+window.Template = (function() {
+
+    // Utils
+
+    // Shared
+
+    // Modules
+
+
+    // DOM ready
     $(function() {
-        console.log('script.js running...');
+    });
 
-        var boilerplate = new Boilerplate();
+    // Page ready
+    $(window).on('load', function() {
     });
 
 })();
