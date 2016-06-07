@@ -39,8 +39,9 @@
         "watch:images": "onchange './src/images/public/**/*' -- npm run copy:images",
         "watch:script": "onchange './src/js/**/*' -- npm run build:script",
 
-        "prewatch": "npm run build",
-        "watch": "parallelshell 'npm run watch:css' 'npm run watch:images' 'npm run watch:script'"
+        "watch": "npm run build && parallelshell 'npm run watch:css' 'npm run watch:images' 'npm run watch:script'",
+        "watch:nodemon": "npm run build && parallelshell 'nodemon app.js' 'npm run watch:css' 'npm run watch:images' 'npm run watch:script'",
+        "watch:node": "npm run build && parallelshell 'node app.js' 'npm run watch:css' 'npm run watch:images' 'npm run watch:script'"
     },
     "engines": {
         "node": ">= 4.4.4"

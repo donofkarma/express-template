@@ -25,12 +25,10 @@ These tasks are performed using NPM tasks:
 
 * Build: `npm run build`
 * Deploy: `npm run deploy`
-* Watch (this also builds the files first): `npm run watch`
-
-
-To do
----------------------
-* Update the watch task to run nodemon/node as well
+* Watch (this also builds the assets files first):
+    * Just the assets: `npm run watch`
+    * Nodemon server: `npm run watch:nodemon`
+    * Node server: `npm run watch:node`
 
 
 Release History
