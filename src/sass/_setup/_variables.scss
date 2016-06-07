@@ -7,32 +7,31 @@ $imagePath: $assetPath + 'images/';
 /* Breakpoints */
 $extraSmallScreen: 320px;
 $smallScreen: 480px;
-$mediumScreen: 850px;
+$mediumScreen: 768px;
 $largeScreen: 1024px;
 $wideScreen: 1200px;
 
 /* Colours */
 // brand
 
-// style
-$background: #efefef;
-$copy: #333;
-
 // general
 $black: #000;
+$grey-medium: #999;
+$grey-dark: #333;
 $white: #fff;
+
+// style
+$background: $white;
+$copy: $grey-dark;
+$error-message: #ff0000;
+$placeholder-copy: $grey-medium;
 
 
 /* Animation */
-$transition-duration: 0.5s;
-$easing: ease-out;
+$transition-duration: 0.25s;
+$transition-easing: ease-out;
 
 
 /* Fonts */
-// body copy
-// @include font-face($name: 'Futura Light', $filename: 'futura_light-webfont');
 $BodyCopy: Helvetica, Arial, sans-serif;
-
-// headings
-// @include font-face($name: 'VAG Rounded Light', $filename: 'vag_rounded_light-webfont');
 $HeadingCopy: Helvetica, Arial, sans-serif;

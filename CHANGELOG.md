@@ -1,6 +1,11 @@
 Changelog
 ---------------------
 
+### 0.6.0
+- Renaming repo
+- Changing build tasks to NPM
+- Swapping Jade for Handlbars
+
 ### 0.5.1
 - Updating packages
 - New SASS layout

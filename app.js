@@ -4,8 +4,9 @@
 var express = require('express');
 // express middleware dependencies
 var expressBodyParser = require('body-parser');
+var expressHandlebars = require('express-handlebars')
 var expressMethodOverride = require('method-override');
-var expressMorgan  = require('morgan');
+var expressMorgan = require('morgan');
 var app = express();
 // modules
 var router = require('./app/router');
@@ -14,10 +15,15 @@ var router = require('./app/router');
 /* Configure App */
 // set the port number to listen to
 app.set('port', process.env.PORT || 3000);
-// set the directory that holds the templates
-app.set('views', __dirname + '/views');
-// set the template engine to jade
-app.set('view engine', 'jade');
+// create `ExpressHandlebars` instance with a default layout
+var hbs = expressHandlebars.create({
+    defaultLayout: 'layout',
+    extname: '.hbs',
+    partialsDir: [ 'views/partials/' ]
+});
+// set the template engine to handlebars
+app.engine('.hbs', hbs.engine);
+app.set('view engine', '.hbs');
 // start the logger for requests
 app.use(expressMorgan('short'));
 // object containing the parsed request body

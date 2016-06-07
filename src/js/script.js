@@ -1,26 +1,9 @@
-/* jslint unused: false */
-
 "use strict";
 
-// Globals
-window.jQuery = window.$ = require('jquery');
-
 // Main app
-window.Template = (function() {
-
-    // Utils
-
-    // Shared
-
-    // Modules
-
+window.ExpressTemplate = (function() {
 
     // DOM ready
-    $(function() {
-    });
-
-    // Page ready
-    $(window).on('load', function() {
-    });
+    console.log('ExpressTemplate running...');
 
 })();

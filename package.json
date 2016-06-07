@@ -1,50 +1,71 @@
 {
-    "name": "node-jade-sass-js-template",
-    "description": "A template to build simple, responsive prototypes from.",
-    "version": "0.5.2",
+    "name": "express-template",
+    "description": "A template to build simple, responsive prototypes.",
+    "version": "0.6.0",
     "author": "Jasal Vadgama - http://blacklabelcreative.com/",
     "repository": {
         "type": "git",
-        "url": "git://github.com/donofkarma/node-jade-sass-js-template.git"
+        "url": "git://github.com/donofkarma/express-template.git"
     },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/donofkarma/node-jade-sass-js-template/blob/master/LICENSE-MIT"
-        }
-    ],
+    "license": "MIT",
     "main": "/",
+    "config": {
+        "build_dir": "./_site/assets"
+    },
     "scripts": {
-        "start": "node app.js",
-        "test": "grunt test",
-        "build": "grunt build",
-        "all": "grunt"
+        "clean": "rimraf $npm_package_config_build_dir",
+
+        "copy:data": "mkdir -p $npm_package_config_build_dir/data && cp -r ./src/data/ $npm_package_config_build_dir/data/",
+        "copy:fonts": "mkdir -p $npm_package_config_build_dir/fonts && cp -r ./src/fonts/ $npm_package_config_build_dir/fonts/",
+        "copy:images": "mkdir -p $npm_package_config_build_dir/images && cp -r ./src/images/public/ $npm_package_config_build_dir/images/",
+        "copy": "npm run copy:data && npm run copy:fonts && npm run copy:images",
+
+        "build:css": "./node_modules/.bin/node-sass ./src/sass/ --output $npm_package_config_build_dir/css/",
+        "build:script": "npm run test:script && mkdir -p $npm_package_config_build_dir/js && ./node_modules/.bin/browserify ./src/js/script.js -o $npm_package_config_build_dir/js/script.js -t [ babelify --presets [ es2015 ] ]",
+
+        "test:script": "./node_modules/.bin/eslint ./src/js/**",
+
+        "prebuild": "npm run clean && npm run test:script",
+        "build": "npm run copy && npm run build:css && npm run build:script",
+        "postbuild": "",
+
+        "deploy:css": "./node_modules/.bin/cleancss -o $npm_package_config_build_dir/css/style.css $npm_package_config_build_dir/css/style.css",
+        "deploy:script": "./node_modules/.bin/uglifyjs --compress --mangle --stats --output $npm_package_config_build_dir/js/script.js -- $npm_package_config_build_dir/js/script.js",
+
+        "predeploy": "npm run build",
+        "deploy": "npm run deploy:css && npm run deploy:script",
+
+        "watch:css": "onchange './src/sass/**/*' -- npm run build:css",
+        "watch:images": "onchange './src/images/public/**/*' -- npm run copy:images",
+        "watch:script": "onchange './src/js/**/*' -- npm run build:script",
+
+        "prewatch": "npm run build",
+        "watch": "parallelshell 'npm run watch:css' 'npm run watch:images' 'npm run watch:script'"
     },
     "engines": {
-        "node": ">= 4.1.2"
+        "node": ">= 4.4.4"
     },
     "dependencies": {
-        "body-parser": "1.4.x",
+        "body-parser": "1.15.x",
         "express": "4.x",
-        "jade": "1.11.x",
-        "jquery": "2.1.x",
-        "method-override": "2.0.x",
-        "morgan": "1.1.x"
+        "express-handlebars": "3.0.x",
+        "method-override": "2.3.x",
+        "morgan": "1.7.x"
     },
     "devDependencies": {
-        "browserify": "11.2.x",
-        "grunt": "0.4.x",
-        "grunt-browserify": "3.8.x",
-        "grunt-concurrent": "1.0.x",
-        "grunt-contrib-clean": "0.6.x",
-        "grunt-contrib-copy": "0.8.x",
-        "grunt-contrib-cssmin": "0.14.x",
-        "grunt-contrib-jade": "0.15.x",
-        "grunt-contrib-jshint": "0.11.x",
-        "grunt-contrib-uglify": "0.9.x",
-        "grunt-contrib-watch": "0.6.x",
-        "grunt-nodemon": "0.4.x",
-        "grunt-sass": "1.0.x",
-        "matchdep": "1.0.x"
+        "babel-cli": "6.8.x",
+        "babel-preset-es2015": "6.5.x",
+        "babelify": "7.3.x",
+        "browserify": "13.0.x",
+        "bootstrap-sass" : "3.3.6",
+        "clean-css": "3.4.x",
+        "eslint": "2.2.x",
+        "node-sass": "3.7.x",
+        "normalize-scss": "4.2.x",
+        "onchange": "2.4.x",
+        "parallelshell": "2.0.x",
+        "rimraf": "2.5.x",
+        "sass-mq": "3.2.x",
+        "uglify-js": "2.6.x"
     }
 }

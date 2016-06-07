@@ -2,8 +2,6 @@
     "restartable": "rs",
     "ignore": [
         ".git",
-        "Gruntfile.js",
-        "bower_components/**/*",
         "node_modules/**/*",
         "src/**/*",
         "_site/**/*"
@@ -15,5 +13,5 @@
     "env": {
         "NODE_ENV": "development"
     },
-    "ext": "js json"
+    "ext": "handlebars jade js json"
 }

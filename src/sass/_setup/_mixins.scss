@@ -4,6 +4,7 @@
         font-family: $name;
         src: url($fontPath + '#{$filename}.eot');
         src: url($fontPath + '#{$filename}.eot?#iefix') format('embedded-opentype'),
+             url($fontPath + '#{$filename}.woff2') format('woff2'),
              url($fontPath + '#{$filename}.woff') format('woff'),
              url($fontPath + '#{$filename}.ttf') format('truetype'),
              url($fontPath + '#{$filename}.svg##{$name}') format('svg');
@@ -35,8 +36,19 @@
 }
 
 
+/* Reset buttons */
+@mixin reset-button {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    outline: 0;
+}
+
+
 /* Text replacement */
 @mixin text-replacement($width, $height, $image) {
+    display: block;
     width: $width;
     height: $height;
     background: url($image) center center no-repeat;
@@ -98,18 +110,21 @@
     transform-origin: $origin;
 }
 
+// transitions
+@mixin transition($transition-property, $transition-time, $easing) {
+    -webkit-transition: $transition-property $transition-time $easing;
+    transition: $transition-property $transition-time $easing;
+}
+
 
 /* Gradients */
-@mixin linear-gradient($direction: 135deg, $startColor: #fff, $stopColor: #000, $startPos: 0%, $endPos: 100%) {
-    background: $startColor; // fallback
-    background: -ms-linear-gradient($direction, $startColor $startPos, $stopColor $endPos); // IE 10+
-    background: -moz-linear-gradient($direction, $startColor $startPos, $stopColor $endPos); // W3C
-    background: linear-gradient($direction, $startColor $startPos, $stopColor $endPos); // W3C
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$stopColor}', GradientType=1 ); // IE6-9 fallback on horizontal gradient
-}
 @mixin linear-gradient-rgba($direction: 135deg, $startColor: #fff, $stopColor: #000, $startPos: 0%, $endPos: 100%) {
     background: $startColor; // fallback
     background: -ms-linear-gradient($direction, $startColor $startPos, $stopColor $endPos); // IE 10+
-    background: -moz-linear-gradient($direction, $startColor $startPos, $stopColor $endPos); // IE 10+
+    background: -moz-linear-gradient($direction, $startColor $startPos, $stopColor $endPos); // FF ?+
     background: linear-gradient($direction, $startColor $startPos, $stopColor $endPos); // W3C
+}
+@mixin linear-gradient($direction: 135deg, $startColor: #fff, $stopColor: #000, $startPos: 0%, $endPos: 100%) {
+    @include linear-gradient-rgba($direction, $startColor, $stopColor, $startPos, $endPos);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$stopColor}', GradientType=1 ); // IE6-9 fallback on horizontal gradient
 }

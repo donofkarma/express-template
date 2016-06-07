@@ -30,7 +30,7 @@ router.get('/403', function(req, res, next) {
 });
 router.get('/500', function(req, res, next) {
     // trigger a generic 500 error
-    var err = new Error('keyboard cat!');
+    var err = new Error('There was a server error.');
     err.status = 500;
     next(err);
 });
