@@ -25,16 +25,15 @@ These tasks are performed using NPM tasks:
 
 * Build: `npm run build`
 * Deploy: `npm run deploy`
-* Watch (this also builds the assets files first):
-    * Just the assets: `npm run watch`
-    * Nodemon server: `npm run watch:nodemon`
-    * Node server: `npm run watch:node`
+* Serve: (build the front-end assets, start the server and watch for file changes):
+    * Nodemon server: `npm run serve`
+    * Node server: `npm run serve:node`
 
 
 Release History
 ---------------------
 
-For a full release history, see the [Changelog](https://github.com/donofkarma/html-css-js-template/blob/master/CHANGELOG.md).
+For a full release history, see the [Changelog](https://github.com/donofkarma/express-template/blob/master/CHANGELOG.md).
 
 License
 ---------------------
